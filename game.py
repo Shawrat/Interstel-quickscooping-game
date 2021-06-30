@@ -7,21 +7,21 @@ pygame.init()
 
 screen = pygame.display.set_mode((800,600))
 
-background = pygame.image.load('interstele.png')
+background = pygame.image.load('images/interstele.png')
 
-endgame_placard = pygame.image.load('peakgameoverkewk.jpg')
+endgame_placard = pygame.image.load('images/peakgameoverkewk.jpg')
 
 #background based music by based people
-mixer.music.load('quickscooperbasedaudiofileconfidential.mp3')
+mixer.music.load('audio/quickscooperbasedaudiofileconfidential.mp3')
 mixer.music.play(-1)
 
 #title and stuff
 pygame.display.set_caption("Interstellar Knockoff")
-icon = pygame.image.load('heptapods.png')
+icon = pygame.image.load('images/heptapods.png')
 pygame.display.set_icon(icon)
 
 #player
-playerimg = pygame.image.load('001-spaceship.png')
+playerimg = pygame.image.load('images/001-spaceship.png')
 playerX = 370
 playerY = 480
 playerXposchange = 0
@@ -35,14 +35,14 @@ enemyYposchange = []
 no_of_enemies = 7
 
 for i in range (0,no_of_enemies):
-    enemyimg.append(pygame.image.load('laughing.png'))
+    enemyimg.append(pygame.image.load('images/laughing.png'))
     enemyX.append(random.randint(0,735))  
     enemyY.append(random.randint(50,150)) 
     enemyXposchange.append(4)
     enemyYposchange.append(40)
 
 #bullet
-bulletimg = pygame.image.load('bullet.png')
+bulletimg = pygame.image.load('images/bullet.png')
 bulletX = 0
 bulletY = 480
 bulletXposchange = 0
@@ -129,7 +129,7 @@ while running:
         #collision
         collide = collision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collide :
-            collision_sound = mixer.Sound('focus_change_fastscroll.wav')
+            collision_sound = mixer.Sound('audio/focus_change_fastscroll.wav')
             collision_sound.play()
             bulletY=480
             bulletstate = "ready"
